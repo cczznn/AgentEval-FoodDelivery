@@ -6,36 +6,36 @@
 | --- | --- |
 | tool_call_accuracy | 0.4537 |
 | tool_call_f1 | 0.6987 |
-| task_completion | 0.4074 |
+| task_completion | 0.9259 |
 | plan_quality | 0.9500 |
 
 ## 样本明细
-| task_id | tool_call_accuracy | tool_call_f1 | task_completion | plan_quality |
-| --- | --- | --- | --- | --- |
-| 42966ceff3ff344b | 0.0 | 0.5714285714285715 | 0.25 | 0.85 |
-| d0db4b5fdff044f9 | 1.0 | 1.0 | 0.0 | 1.0 |
-| 9e3111b759961bbd | 1.0 | 1.0 | 0.75 | 1.0 |
-| da7e075e7c66daca | 0.6666666666666666 | 0.0 | 0.0 | 1.0 |
-| 926ad58ae915367f | 1.0 | 1.0 | 0.25 | 1.0 |
-| a1a3d14a57261d1a | 0.0 | 0.5714285714285715 | 0.75 | 0.85 |
-| 7efa3d78cd9bb8a4 | 0.0 | 0.75 | 0.75 | 0.9 |
-| c17773c08b3d5d97 | 0.0 | 0.5714285714285715 | 0.5 | 0.85 |
-| 03afb270f5c56412 | 0.0 | 0.8571428571428571 | 0.5 | 0.85 |
-| eab9973ca441fb8b | 0.49999999999999994 | 0.0 | 0.5 | 1.0 |
-| d6d4e1687347865b | 0.0 | 0.0 | 0.0 | 1.0 |
-| f760e9b45ec310b5 | 1.0 | 1.0 | 0.0 | 1.0 |
-| 92e78677757c0d29 | 0.8333333333333334 | 0.6666666666666666 | 0.75 | 1.0 |
-| 46165aad740f404e | 1.0 | 1.0 | 0.75 | 1.0 |
-| d377268ae116c741 | 0.0 | 0.8571428571428571 | 0.75 | 0.95 |
-| 04000009b2b732b9 | 1.0 | 1.0 | 0.25 | 1.0 |
-| 378e19cf48994cca | 0.5 | 0.0 | 0.25 | 1.0 |
-| 23caec8b0e015c8f | 1.0 | 1.0 | 0.0 | 1.0 |
-| 5bbd65de52152297 | 0.0 | 0.6666666666666666 | 0.0 | 0.95 |
-| 8d001ffac2e53e34 | 0.8333333333333334 | 0.6666666666666666 | 0.75 | 1.0 |
-| a1b2c3d4e5f67890 | 0.0 | 0.8571428571428571 | 0.5 | 0.85 |
-| b2c3d4e5f6a78901 | 1.0 | 1.0 | 0.0 | 1.0 |
-| c3d4e5f6a7b89012 | 0.0 | 0.888888888888889 | 0.5 | 0.95 |
-| d4e5f6a7b8c90123 | 0.0 | 0.6666666666666666 | 0.25 | 0.95 |
-| e5f6a7b8c9d01234 | 0.0 | 0.6666666666666666 | 0.75 | 0.85 |
-| f6a7b8c9d0e12345 | 0.9166666666666666 | 0.75 | 0.5 | 1.0 |
-| a7b8c9d0e1f23456 | 0.0 | 0.8571428571428571 | 0.75 | 0.85 |
+| plan_quality | plan_quality_reason | plan_quality_traces | task_completion | task_completion_reason | task_completion_traces | task_id | tool_call_accuracy | tool_call_accuracy_reason | tool_call_accuracy_traces | tool_call_f1 | tool_call_f1_reason | tool_call_f1_traces |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 1.0 | 任务已成功完成 | {'raw': '```json\n{"completed": 1, "reason": "任务已成功完成", "missing": []}\n```', 'missing': []} | 42966ceff3ff344b | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.625} | 0.5714285714285715 | 工具调用 F1 | {'tp': 2, 'fp': 1, 'fn': 2, 'precision': 0.6666666666666666, 'recall': 0.5} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单号和配送状态已提供 | {'raw': '```json\n{"completed": 1, "reason": "订单号和配送状态已提供", "missing": []}\n```', 'missing': []} | d0db4b5fdff044f9 | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | All core elements are present in the final reply. | {'raw': '```json\n{"completed": 1, "reason": "All core elements are present in the final reply.", "missing": []}\n```', 'missing': []} | 9e3111b759961bbd | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 5, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 成功根据位置和菜系搜索到符合条件的日料店铺列表。 | {'raw': '```json\n{\n  "completed": 1,\n  "reason": "成功根据位置和菜系搜索到符合条件的日料店铺列表。",\n  "missing": []\n}\n```', 'missing': []} | da7e075e7c66daca | 0.6666666666666666 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.6666666666666666} | 0.0 | 工具调用 F1 | {'tp': 0, 'fp': 1, 'fn': 1, 'precision': 0.0, 'recall': 0.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单支付成功 | {'raw': '```json\n{"completed": 1, "reason": "订单支付成功", "missing": []}\n```', 'missing': []} | 926ad58ae915367f | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 1.0 | 任务已成功完成 | {'raw': '```json\n{"completed": 1, "reason": "任务已成功完成", "missing": []}\n```', 'missing': []} | a1a3d14a57261d1a | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.625} | 0.5714285714285715 | 工具调用 F1 | {'tp': 2, 'fp': 1, 'fn': 2, 'precision': 0.6666666666666666, 'recall': 0.5} |
+| 0.9 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 0} | 1.0 | 成功查询店铺菜品并完成下单 | {'raw': '```json\n{"completed": 1, "reason": "成功查询店铺菜品并完成下单", "missing": []}\n```', 'missing': []} | 7efa3d78cd9bb8a4 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 0.125} | 0.75 | 工具调用 F1 | {'tp': 3, 'fp': 1, 'fn': 1, 'precision': 0.75, 'recall': 0.75} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 0.0 | 订单已成功下单，订单号提供，但未提及配送状态和地址确认。；缺失要素：配送状态, 配送地址 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单，订单号提供，但未提及配送状态和地址确认。", "missing": ["配送状态", "配送地址"]}\n```', 'missing': ['配送状态', '配送地址']} | c17773c08b3d5d97 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.6666666666666666} | 0.5714285714285715 | 工具调用 F1 | {'tp': 2, 'fp': 1, 'fn': 2, 'precision': 0.6666666666666666, 'recall': 0.5} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 0.0 | 订单已成功下单并包含订单号和配送地址，但未提及支付方式；缺失要素：支付方式 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单并包含订单号和配送地址，但未提及支付方式", "missing": ["支付方式"]}\n```', 'missing': ['支付方式']} | 03afb270f5c56412 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.75} | 0.8571428571428571 | 工具调用 F1 | {'tp': 3, 'fp': 0, 'fn': 1, 'precision': 1.0, 'recall': 0.75} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单已成功下单 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单", "missing": []}\n```', 'missing': []} | eab9973ca441fb8b | 0.49999999999999994 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.49999999999999994} | 0.0 | 工具调用 F1 | {'tp': 0, 'fp': 3, 'fn': 3, 'precision': 0.0, 'recall': 0.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单配送状态已查询 | {'raw': '```json\n{"completed": 1, "reason": "订单配送状态已查询", "missing": []}\n```', 'missing': []} | d6d4e1687347865b | 0.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.0} | 0.0 | 工具调用 F1 | {'tp': 0, 'fp': 1, 'fn': 1, 'precision': 0.0, 'recall': 0.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 成功搜索到鼓楼校区附近的湘菜馆 | {'raw': '```json\n{"completed": 1, "reason": "成功搜索到鼓楼校区附近的湘菜馆", "missing": []}\n```', 'missing': []} | f760e9b45ec310b5 | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 任务完成，已查询正确菜品并完成下单。 | {'raw': '```json\n{"completed": 1, "reason": "任务完成，已查询正确菜品并完成下单。", "missing": []}\n```', 'missing': []} | 92e78677757c0d29 | 0.8333333333333334 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.8333333333333334} | 0.6666666666666666 | 工具调用 F1 | {'tp': 2, 'fp': 1, 'fn': 1, 'precision': 0.6666666666666666, 'recall': 0.6666666666666666} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 任务已成功完成 | {'raw': '```json\n{"completed": 1, "reason": "任务已成功完成", "missing": []}\n```', 'missing': []} | 46165aad740f404e | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 5, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 0.95 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 1} | 1.0 | 任务已成功完成 | {'raw': '```json\n{"completed": 1, "reason": "任务已成功完成", "missing": []}\n```', 'missing': []} | d377268ae116c741 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 0.3333333333333333} | 0.8571428571428571 | 工具调用 F1 | {'tp': 3, 'fp': 1, 'fn': 0, 'precision': 0.75, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 支付成功 | {'raw': '```json\n{"completed": 1, "reason": "支付成功", "missing": []}\n```', 'missing': []} | 04000009b2b732b9 | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单支付成功 | {'raw': '```json\n{"completed": 1, "reason": "订单支付成功", "missing": []}\n```', 'missing': []} | 378e19cf48994cca | 0.5 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.5} | 0.0 | 工具调用 F1 | {'tp': 0, 'fp': 1, 'fn': 1, 'precision': 0.0, 'recall': 0.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单号和配送状态已提供。 | {'raw': '```json\n{"completed": 1, "reason": "订单号和配送状态已提供。", "missing": []}\n```', 'missing': []} | 23caec8b0e015c8f | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 0.95 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 1} | 1.0 | 任务已完成，已提供期望结果中的核心要素。 | {'raw': '```json\n{"completed": 1, "reason": "任务已完成，已提供期望结果中的核心要素。", "missing": []}\n```', 'missing': []} | 5bbd65de52152297 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 0.6666666666666666 | 工具调用 F1 | {'tp': 1, 'fp': 1, 'fn': 0, 'precision': 0.5, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单已成功下单，订单号和配送地址已提供。 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单，订单号和配送地址已提供。", "missing": []}\n```', 'missing': []} | 8d001ffac2e53e34 | 0.8333333333333334 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.8333333333333334} | 0.6666666666666666 | 工具调用 F1 | {'tp': 2, 'fp': 1, 'fn': 1, 'precision': 0.6666666666666666, 'recall': 0.6666666666666666} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 1.0 | 任务完成 | {'raw': '```json\n{"completed": 1, "reason": "任务完成", "missing": []}\n```', 'missing': []} | a1b2c3d4e5f67890 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.75} | 0.8571428571428571 | 工具调用 F1 | {'tp': 3, 'fp': 0, 'fn': 1, 'precision': 1.0, 'recall': 0.75} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单号和配送状态已提供。 | {'raw': '```json\n{"completed": 1, "reason": "订单号和配送状态已提供。", "missing": []}\n```', 'missing': []} | b2c3d4e5f6a78901 | 1.0 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 1.0} | 1.0 | 工具调用 F1 | {'tp': 1, 'fp': 0, 'fn': 0, 'precision': 1.0, 'recall': 1.0} |
+| 0.95 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 1} | 1.0 | 成功查询店铺菜品并完成下单 | {'raw': '```json\n{"completed": 1, "reason": "成功查询店铺菜品并完成下单", "missing": []}\n```', 'missing': []} | c3d4e5f6a7b89012 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 0.0} | 0.888888888888889 | 工具调用 F1 | {'tp': 4, 'fp': 1, 'fn': 0, 'precision': 0.8, 'recall': 1.0} |
+| 0.95 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 1} | 1.0 | 支付成功 | {'raw': '```json\n{"completed": 1, "reason": "支付成功", "missing": []}\n```', 'missing': []} | d4e5f6a7b8c90123 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 0.0} | 0.6666666666666666 | 工具调用 F1 | {'tp': 1, 'fp': 1, 'fn': 0, 'precision': 0.5, 'recall': 1.0} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 3} | 1.0 | 任务已成功完成 | {'raw': '```json\n{"completed": 1, "reason": "任务已成功完成", "missing": []}\n```', 'missing': []} | e5f6a7b8c9d01234 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 1.0, 'avg_arg_score': 0.16666666666666666} | 0.6666666666666666 | 工具调用 F1 | {'tp': 3, 'fp': 3, 'fn': 0, 'precision': 0.5, 'recall': 1.0} |
+| 1.0 | 规划合理性 | {'repeat_penalty': 0, 'missing': 0, 'length_gap': 0} | 1.0 | 订单已成功下单并包含所有核心要素。 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单并包含所有核心要素。", "missing": []}\n```', 'missing': []} | f6a7b8c9d0e12345 | 0.9166666666666666 | 工具调用准确度 | {'aligned': 1.0, 'coverage': 1.0, 'avg_arg_score': 0.9166666666666666} | 0.75 | 工具调用 F1 | {'tp': 3, 'fp': 1, 'fn': 1, 'precision': 0.75, 'recall': 0.75} |
+| 0.85 | 规划合理性 | {'repeat_penalty': 0, 'missing': 1, 'length_gap': 1} | 1.0 | 订单已成功下单并提示支付 | {'raw': '```json\n{"completed": 1, "reason": "订单已成功下单并提示支付", "missing": []}\n```', 'missing': []} | a7b8c9d0e1f23456 | 0.0 | 工具调用准确度 | {'aligned': 0.0, 'coverage': 0.75, 'avg_arg_score': 0.75} | 0.8571428571428571 | 工具调用 F1 | {'tp': 3, 'fp': 0, 'fn': 1, 'precision': 1.0, 'recall': 0.75} |
